@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  riaspaced The Riaspace Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: riaspaced
+# processname: riaspaced
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/riaspaced, see below
+if [ -f /etc/sysconfig/riaspaced ]; then
+        . /etc/sysconfig/riaspaced
+fi
+
+RETVAL=0
+
+prog=riaspaced
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/riaspaced
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/riaspaced}
+
+# riaspaced defaults to /usr/bin/riaspaced, override with BITCOIND_BIN
+riaspaced=${BITCOIND_BIN-/usr/bin/riaspaced}
+
+# riaspaced opts default to -disablewallet, override with BITCOIND_OPTS
+riaspaced_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $riaspaced $riaspaced_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Riaspace
+Comment=Riaspace P2P Cryptocurrency
+Comment[fr]=Riaspace, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Riaspace, eşten eşe kriptografik sanal para birimi
+Exec=riaspace-qt %u
+Terminal=false
+Type=Application
+Icon=riaspace128
+MimeType=x-scheme-handler/riaspace;
+Categories=Office;Finance;

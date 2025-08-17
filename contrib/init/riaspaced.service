@@ -1,0 +1,22 @@
+[Unit]
+Description=Riaspace's distributed currency daemon
+After=network.target
+
+[Service]
+User=riaspacecore
+Group=riaspacecore
+
+Type=forking
+PIDFile=/var/lib/riaspaced/riaspaced.pid
+ExecStart=/usr/bin/riaspaced -daemon -pid=/var/lib/riaspaced/riaspaced.pid \
+-conf=/etc/riaspacecore/riaspace.conf -datadir=/var/lib/riaspaced -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

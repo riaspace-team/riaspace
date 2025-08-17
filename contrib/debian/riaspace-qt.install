@@ -1,0 +1,6 @@
+usr/local/bin/riaspace-qt usr/bin
+share/pixmaps/riaspace32.xpm usr/share/pixmaps
+share/pixmaps/riaspace16.xpm usr/share/pixmaps
+share/pixmaps/riaspace128.png usr/share/pixmaps
+debian/riaspace-qt.desktop usr/share/applications
+debian/riaspace-qt.protocol usr/share/kde4/services/
