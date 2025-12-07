@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/riaspace_bg.qm</file>
+        <file alias="de">locale/riaspace_de.qm</file>
+        <file alias="en">locale/riaspace_en.qm</file>
+        <file alias="es">locale/riaspace_es.qm</file>
+        <file alias="fi">locale/riaspace_fi.qm</file>
+        <file alias="fr">locale/riaspace_fr.qm</file>
+        <file alias="it">locale/riaspace_it.qm</file>
+        <file alias="ja">locale/riaspace_ja.qm</file>
+        <file alias="pl">locale/riaspace_pl.qm</file>
+        <file alias="pt">locale/riaspace_pt.qm</file>
+        <file alias="ru">locale/riaspace_ru.qm</file>
+        <file alias="sk">locale/riaspace_sk.qm</file>
+        <file alias="sv">locale/riaspace_sv.qm</file>
+        <file alias="vi">locale/riaspace_vi.qm</file>
+        <file alias="zh_CN">locale/riaspace_zh_CN.qm</file>
+        <file alias="zh_TW">locale/riaspace_zh_TW.qm</file>
+    </qresource>
+</RCC>
